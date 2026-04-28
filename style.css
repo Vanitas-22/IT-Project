@@ -1,0 +1,123 @@
+/* Importing Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,100;1,200;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    /* Colors */
+  --color-primary: #1a1a2e;    /* deep navy — header, footer */
+  --color-secondary: #f5a623;  /* warm gold — buttons, accents */
+  --color-background: #f9f9f9; /* light grey — page background */
+  --color-text: #333333;       /* dark grey — body text */
+  --color-white: #ffffff;
+
+  /* Font Sizes */
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l :1.5rem;
+
+  /* Border radius */
+  --border-radius-s: 8px;
+  --border-radius-m: 30px;
+
+  /* Font weight */
+  --font-weight-small: 400;
+  --font-weight-normal: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* site max width */
+  --site-max-width: 1300px;
+}
+
+/* Whole page styling */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar Styling */
+header {
+    background-color: var(--color-primary);
+    border-top: 2px solid var(--color-secondary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+header .nav-top{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-top a, .nav-link {
+    color: var(--color-white);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-semibold);
+}
+
+.logo-text {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    letter-spacing: 2.5px;
+}
+
+.nav-logo img {
+    width: 45px;
+    height: 35px;
+}
+
+.btn-outline:hover #cart-icon {
+    animation: fa-shake 2s ease infinite;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 10px;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar .nav-menu .nav-link, .nav-actions a {
+    padding: 10px 18px;
+    border-radius: var(--border-radius-m);
+    font-size: var(--font-size-m);
+    transition: 0.3s ease;
+}
+
+.navbar .nav-menu .nav-link:hover,
+.nav-actions a:hover {
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+
+}
+
+.nav-link {
+    letter-spacing: 0.5px;
+}
+
+.btn-outline {
+    border: 2px solid var(--color-secondary);
+    border-radius: var(--border-radius-m);
+    padding: 6px 20px;
+    transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
