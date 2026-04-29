@@ -10,10 +10,10 @@
 
 :root {
     /* Colors */
-  --color-primary: #1a1a2e;    /* deep navy — header, footer */
-  --color-secondary: #f5a623;  /* warm gold — buttons, accents */
-  --color-background: #f9f9f9; /* light grey — page background */
-  --color-text: #333333;       /* dark grey — body text */
+  --color-primary: #1a1a2e;    
+  --color-secondary: #f5a623;  
+  --color-background: #f9f9f9; 
+  --color-text: #333333;       
   --color-white: #ffffff;
 
   /* Font Sizes */
@@ -36,6 +36,16 @@
 }
 
 /* Whole page styling */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 ul {
     list-style: none;
 }
@@ -44,7 +54,7 @@ a {
     text-decoration: none;
 }
 
-/* Navbar Styling */
+/* Navigation Bar Styling */
 header {
     background-color: var(--color-primary);
     border-top: 2px solid var(--color-secondary);
@@ -122,5 +132,83 @@ header .nav-top{
     border-color: var(--color-secondary);
 }
 
-/* ------------------------------------------------------------------------------------------- */
 
+
+/* Footer Styling */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin-top: auto;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 50px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Brand column */
+.footer-tagline {
+    margin-top: 12px;
+    font-size: var(--font-size-n);
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 220px;
+}
+
+.footer-heading {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-secondary);
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* Links */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a, .footer-links li {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-n);
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-secondary);
+    padding-left: 4px;
+}
+
+.footer-links li i {
+    margin-right: 8px;
+    color: var(--color-secondary);
+}
+
+/* Social icons */
+.footer-socials {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-socials a {
+    color: var(--color-white);
+    font-size: var(--font-size-l);
+    transition: 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    font-size: var(--font-size-n);
+    color: rgba(255, 255, 255, 0.5);
+}
