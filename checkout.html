@@ -3,11 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xyra</title>
+    <title>Xyra-checkout</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {font-family: arial, sans-serif; line-height: 1.6;}
+        h1,h2 {text-align: center;}
+        form{
+            width: 50%;
+            margin: auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            border : 1px solid #c4c4c4;
+        }
+        input[type = "text"], select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 10px;
+            border: 1px solid #cecece;
+            border-radius: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #dadada;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #6d6d6d;
+        }
+            #msg {
+                margin-top: 20px;
+                font-weight: bold;
+            }
+            .error {
+                color: red;
+            }
+            .success {
+                color: green;
+            }
+
+        
+
+    </style>
 </head>
 <body>
+    <h1 align="center">Checkout</h1>
+    <form >
+        <p>Full Name</p>
+        <input type="text" id="fullname" placeholder="Enter your full name" >
+    </p>
+    <p>
+        <label>phone number</label>
+        <input type="text" id="phonenumber" placeholder="Enter your phonenumber">
+    </p>
+    <p>
+        <label>Address</label>
+        <input type="text" id="address" placeholder="street name /building number">
+  </p>
+    <p>
+        <label>City</label>
+        <input type="text" id="city" placeholder="zip code / city">
+    </p>
+    <p>
+        <label>Payment method</label>
+        <select id="paymentmethod">
+            <option value="creditcard">Credit Card</option>
+            <option value="banktransfer">cash on delivery</option>
+        </select>
+    </p>
+    <p>
+        <button type="button" onclick="placeorder()">placeorder</button>
+    </p>
+    <div id="msg"></div>
+ </form>
 
+    <div aligin ="center" style="margin-top: 20px;">
+        <a href="cart.html">Back to cart</a>
+    </div>
     <script src="script.js"></script>
+    <script>
+        function placeorder(){
+            var n = document.getElementById("fullname").value;
+            var p = document.getElementById("phonenumber").value;
+            var a = document.getElementById("address").value;
+            var c = document.getElementById("city").value;
+            var m = document.getElementById("paymentmethod").value;
+            var msgdiv = document.getElementById("msg")
+            if (n === "" || p === "" || a === "" || c === "") {
+               msgdiv.innerHTML = "error: please fill in all fields";
+               msgdiv.className = "error";
+            } else {
+                msgdiv.innerHTML = "thank you,"+n+"! Your order has been placed successfully.";
+                msgdiv.className = "success";
+
+            }}
+            </script>
+
+
+
 </body>
 </html>

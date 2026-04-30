@@ -3,11 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xyra</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Xyra- cart</title>
+    <link rel="stylesheet" href="style.css"> 
+<style>
+        body {font-family: arial, sans-serif;}
+        h1 {text-align: center;}
+        table{  width: 90%; margin: auto;border-collapse: collapse;text-align: center;}
+        table, th, td {border: 1px solid #000000;}
+        th, td {padding: 10px;}  
+        th { background-color: #f2f2f2; }
+        .qty-btn { width: 30px; height: 30px; cursor: pointer; }
+        .total-section { text-align: center; margin-top: 20px; font-size: 25px; font-weight: bold; }
+        input[type="checkbox"] { transform: scale(1.3); cursor: pointer; }
+    </style>
+
 </head>
 <body>
+<h1>shopping cart</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody id = "cart-body">
+         <tr class="cart-row">
+            <td>laptop</td>
+            <td class ="price">100</td>
+            <td>
+            <button class="qty-btn" onclick="updateQty (this,-1)">- </button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="updateQty (this,1)">+</button>
+            </td>
+            <td><button class = "remove-btn" onclick="removeItem(this)" >Remove</button></td> 
+
+         </tr>
+         <tr class="cart-row">
+                <td>Phone</td>
+                <td class="price">500</td>
+                <td>
+                    <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
+                    <span class="qty-num">1</span>
+                    <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                </td>
+                <td><button class="remove-btn" onclick="removeItem(this)">remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="total-section">
+        Total = $<span id="total">1300</span>
+    </div>
+
+    <div class="link-section">
+        <a href="checkout.html">Go To Checkout</a>
+    </div            
+    </tbody>
+</table>
 
     <script src="script.js"></script>
+    <script>
+        function calculatetotal() {
+            var row = document.getElementsByClassName("cart-row");
+            var total = 0;
+            for (var i = 0; i < row.length; i++) {
+                var price = parseFloat(row[i].getElementsByClassName("price")[0].innerText);
+                var qty = parseInt(row[i].getElementsByClassName("qty-num")[0].innerText);
+                total += price * qty;
+            }
+            document.getElementById("total").innerText = total;
+        }
+        function updateQty(button, change) {
+            var qtyNum = button.parentElement.getElementsByClassName("qty-num")[0];
+            var currentQty = parseInt(qtyNum.innerText);
+            var newQty = currentQty + change;
+            if (newQty < 1) newQty = 1; // Prevent quantity from going below 1
+                qtyNum.innerText = newQty;
+                calculatetotal(); // R
+                // ecalculate total after quantity change
+            }
+        
+        function removeItem(button) {
+            var row = button.parentElement.parentElement;
+            row.remove();
+            calculatetotal(); // Recalculate total after removing item
+        }
+    </script>
 </body>
 </html>
