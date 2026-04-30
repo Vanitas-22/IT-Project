@@ -46,6 +46,157 @@
 
     <main>
 
+        <!-- Banner Section-->
+        <section class="banner-section">
+            <h1 class="banner-title">Get In Touch</h1>
+            <p class="banner-subtitle">Customer service. Reach out to us anytime.</p>
+        </section>
+
+        <!-- Form Section-->
+        <section class="contact-section">
+
+            <!-- Left Side (Form) -->
+            <div class="contact-form-part">
+                <h2 class="section-title">Send Us a Message</h2>
+
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="John Smith">
+
+                        <label for="email">Email Adress</label>
+                        <input type="email" id="email" class="form-input" placeholder="john@gmail.com">
+
+                        <label for="subject">Subject</label>
+                        <select id="subject" class="form-input">
+                            <option value="">Select a subject</option>
+                            <option value="order">Order Issue</option>
+                            <option value="return">Return & Refund</option>
+                            <option value="shipping">Shipping Query</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-input form-textarea" placeholder="Write your message here..."></textarea>
+
+                    </div>
+                    <button class="form-btn" onclick="formSubmit()">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+
+                    <div class="submit-success" id="submit-success">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Your message has been sent successfully!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side (Info) -->
+             <div class="contact-info">
+                <h2 class="section-title">Contact Information</h2>
+
+                <div class="info-card">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Location</h4>
+                            <p>123 Xyra Street, Cairo, Egypt</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p>xyra@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Phone</h4>
+                            <p>+1 234 567 890</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday, 9am - 6pm</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+        </section>
+
+        <!-- FAQ Section-->
+         <section class="faq-section">
+            <h2 class="section-title">FAQ</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="openFaq(this)">
+                        How long does shipping take?
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Standard shipping takes 3-5 business days. Express shipping is available at checkout and delivers within 1-2 business days.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="openFaq(this)">
+                        What is your return policy?
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept returns within 30 days of purchase. Items must be unused and in original packaging. Refunds are processed within 5-7 business days.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="openFaq(this)">
+                        Do you ship internationally?
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes we ship to over 50 countries worldwide. International shipping times vary between 7-14 business days depending on the destination.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="openFaq(this)">
+                        How do I track my order?
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Once your order ships you will receive a confirmation email with a tracking number. You can use this number on our website or the carrier's website to track your package.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="openFaq(this)">
+                        Can I change or cancel my order?
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Orders can be changed or cancelled within 24 hours of placing them. After that the order enters processing and can no longer be modified.</p>
+                    </div>
+                </div>
+            </div>
+         </section>
+
     </main>
 
 
