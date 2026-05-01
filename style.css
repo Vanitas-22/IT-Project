@@ -225,6 +225,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid var(--color-secondary);
 }
 
 .products {
@@ -251,7 +252,7 @@ footer {
     border-radius: 10px;
 }
 
-button {
+.shop button {
     background: black;
     color: var(--color-white);
     border-radius: 15px;
@@ -289,7 +290,7 @@ body.dark { background: #121212; color: #fff; }
     color: var(--color-white);
     text-align: center;
     padding: 60px 20px;
-    border-bottom: 3px solid var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
 }
 
 .banner-title {
