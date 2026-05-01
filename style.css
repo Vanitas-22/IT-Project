@@ -215,9 +215,7 @@ footer {
     font-size: var(--font-size-n);
     color: rgba(255, 255, 255, 0.5);
 }
-
-
-/* Contact page */
+  
 
 /* Banner*/
 .banner-section {
@@ -225,7 +223,7 @@ footer {
     color: var(--color-white);
     text-align: center;
     padding: 60px 20px;
-    border-bottom: 3px solid var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
 }
 
 .banner-title {
