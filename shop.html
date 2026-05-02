@@ -45,9 +45,115 @@
 
 
     <main>
+   <h1>online shop</h1>
+  
+      <div class="controls">
+        <button onclick="setTheme('light')">Light Mode</button>
+        <button onclick="setTheme('dark')">Dark Mode</button>
+        <div class="search-box">
+         <input type="text" placeholder="Search products..">
+          <button class="search-btn">Search</button>
+        </div>
+     </div>
+
+<section class="products" id="products">
+<div class="product-card">
+ <img src="shop-images/T-shirt.jpg">
+ <h3>T-shirt</h3>
+ <p class="price">$50</p>
+ <button class="add-btn" onclick="addToCart('T-shirt',50)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Iphone-12.jpg">
+ <h3>Iphone-12</h3>
+ <p class="price">$100</p>
+ <button class="add-btn" onclick="addToCart('Iphone-12',100)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Hoodie.jpg">
+ <h3>Hoodie</h3>
+ <p class="price">$35</p>
+ <button class="add-btn" onclick="addToCart('Hoodie',35)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Laptop-mac.jpg">
+ <h3>Laptop-mac</h3>
+ <p class="price">$150</p>
+ <button class="add-btn" onclick="addToCart('Laptop-mac',150)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Shoes.jpg">
+ <h3>Shoes</h3>
+ <p class="price">$20</p>
+ <button class="add-btn" onclick="addToCart('Shoes',20)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Watch.jpg">
+ <h3>Watch</h3>
+ <p class="price">$20</p>
+ <button class="add-btn" onclick="addToCart('Watch',20)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Cap.jpg">
+ <h3>Cap</h3>
+ <p class="price">$5</p>
+ <button class="add-btn" onclick="addToCart('Cap',5)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Jacket.jpg">
+ <h3>Jacket</h3>
+ <p class="price">$70</p>
+ <button class="add-btn" onclick="addToCart('Jacket',70)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Bag.jpg">
+ <h3>Bag</h3>
+ <p class="price">$10</p>
+ <button class="add-btn" onclick="addToCart('Bag',10)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Jeans.jpg">
+ <h3>Jeans</h3>
+ <p class="price">$50</p>
+ <button class="add-btn" onclick="addToCart('Jeans',50)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Sunglasses.jpg">
+ <h3>Sunglasses</h3>
+ <p class="price">$15</p>
+ <button class="add-btn" onclick="addToCart('Sunglasses',15)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Headphones.jpg">
+ <h3>Headphones</h3>
+ <p class="price">$50</p>
+ <button class="add-btn" onclick="addToCart('Headphones',50)">Add to cart</button>
+</div>
+<div classo="product-card">
+ <img src="shop-images/Soundcore.jpg">
+ <h3>Soundcore</h3>
+ <p class="price">$60</p>
+ <button class="add-btn" onclick="addToCart('Soundcore',60)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Laptopstand.jpg">
+ <h3>Laptopstand</h3>
+ <p class="price">$25</p>
+ <button class="add-btn" onclick="addToCart('Laptopstand',25)">Add to cart</button>
+</div>
+<div class="product-card">
+ <img src="shop-images/Cases.jpg">
+ <h3>Cases</h3>
+ <p class="price">$5</p>
+ <button class="add-btn" onclick="addToCart('Cases',5)">Add to cart</button>
+</div>
+</section>
+<div class="cart">
+     Cart Items: <span id="cartCount">0</span>
+</div>
+
 
     </main>
-
 
     <footer>
         <!-- Top section -->
@@ -105,3 +211,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
