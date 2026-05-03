@@ -573,7 +573,7 @@ form {
 }
 
 .facebook-icon:hover {
-    color: blue;
+    color: rgb(67, 67, 234);
     transform: translateY(-3px);
 }
 
