@@ -606,3 +606,177 @@ form {
     background: #1a1a2e;
     color: #eee;
 }
+
+
+/* Cart styling */
+.cart-main { 
+    padding: 40px 0; 
+}
+
+h1 { 
+    text-align: center; margin-bottom: 30px; 
+}
+        
+table { 
+    width: 90%; 
+    margin: auto; 
+    border-collapse: collapse; 
+    text-align: center;
+    background-color: #fff;
+ }
+
+table, th, td { 
+    border: 1px solid #ddd; 
+}
+
+th, td { 
+    padding: 15px; 
+}
+
+th { 
+    background-color: #f8f8f8; color: #333; 
+}
+        
+.qty-btn { 
+    width: 30px; 
+    height: 30px; 
+    cursor: pointer; 
+    border: 1px solid #ccc;
+    background: #fff;
+}
+        
+.grand-total-row {
+    font-weight: bold;
+    background-color: #f9f9f9;
+    font-size: 1.2rem;
+}
+
+.link-section { 
+    text-align: center; margin-top: 25px; 
+}
+        
+.btn-checkout {
+    display: inline-flex;
+    padding: 14px 28px;
+    gap: 8px;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: none;
+    border-radius: var(--border-radius-m);
+    font-family: "Poppins", sans-serif;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-m);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-checkout:hover { 
+    opacity: 0.85;
+    transform: translateY(-3px);
+}
+        
+.remove-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: var(--border-radius-m);
+}
+
+
+/* Checkout styling */
+
+.checkout-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+        
+.checkout-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--color-secondary);
+}
+
+.btn-submit {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    gap: 8px;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: none;
+    border-radius: var(--border-radius-m);
+    font-family: "Poppins", sans-serif;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-m);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+    opacity: 0.85;
+    transform: translateY(-3px);
+}
+
+#msg {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+.error { 
+    display: block !important; 
+    background-color: #f8d7da;
+    color: #721c24; 
+}
+.success { 
+    display: block !important; 
+    background-color: #d4edda; 
+    color: #155724; 
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.back-link:hover {
+    transform: translateY(-3px);
+}
