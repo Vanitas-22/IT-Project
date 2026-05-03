@@ -1,37 +1,65 @@
-
 /*shop page js*/
 
 let cartCount = 0;
-
 let cartText = document.getElementById("cartCount");
 
-
-function setTheme(theme) {
-  if(theme === 'dark') {
-    document.body.classList.add('dark-mode');
-   } else {
-  document.body.classList.remove('dark-mode');
-   }
-    document.cookie = "userTheme=" + theme + ";max-age=" + (30*24*60*60) + ";path=/";
-    }
-window.onload = function() {
-    let savedTheme = "light";
-    let cookies = document.cookie.split(';');
-    for(let i = 0; i < cookies.length; i++) {
-        let c = cookies[i].trim();
-        if (c.indexOf("userTheme=") == 0) {
-            savedTheme = c.substring(10);
-       }
-    }
-     if(savedTheme === 'dark'){
-     document.body.className = savedTheme;
-}
-};
 function addToCart(name, price) {
     cartCount++;
     cartText.innerHTML = cartCount;
 console.log(`Added: ${name} - $${price}`);
 }
+
+/* Theme Script */ 
+
+function setCookie(name, value, days) {
+    let expires = ""
+
+    if(days) {
+        const date = new Date()
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
+
+        expires = "; expires=" + date.toUTCString()
+    }
+    document.cookie = name + "=" + value + expires + "; path=/"
+}
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`
+    const parts = value.split(`; ${name}=`)
+
+    if(parts.length === 2) {
+        return parts.pop().split(';').shift();
+    }
+    return null;
+}
+
+function loadTheme() {
+    if(getCookie("theme") === "theme2") {
+        document.documentElement.setAttribute("page-theme", "theme2")
+        const icon = document.getElementById("theme-icon")
+        
+        if(icon) {
+            icon.className = "fa-solid fa-sun"
+        }
+    }
+}
+
+function switchTheme() {
+    const isTheme2 = document.documentElement.getAttribute("page-theme") === "theme2"
+    const icon = document.getElementById("theme-icon")
+
+    if(isTheme2) {
+        document.documentElement.removeAttribute("page-theme")
+        setCookie("theme", "default", 30)
+        icon.className = "fa-solid fa-moon"
+    } else {
+        document.documentElement.setAttribute("page-theme", "theme2")
+        setCookie("theme", "theme2", 30)
+        icon.className = "fa-solid fa-sun"
+    }
+}
+
+loadTheme()
 
 
 /* Contact Script */
@@ -119,8 +147,8 @@ let loginEmail = document.getElementById("lemail").value;
 let loginPassword = document.getElementById("lpassword").value;
 let foundUser = null;
 for(let i = 0; i < localStorage.length; i++){
-     let key = localStorage.key(i);
-     let user = JSON.parse(localStorage.getItem(key));
+    let key = localStorage.key(i);
+    let user = JSON.parse(localStorage.getItem(key));
           if(user.Email === loginEmail && user.password === loginPassword){
             foundUser = user;
             break;
@@ -137,3 +165,37 @@ for(let i = 0; i < localStorage.length; i++){
     }
 
 });
+
+/* Cart script */
+function calculatetotal() {
+    var rows = document.getElementsByClassName("cart-row");
+    var total = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+        var price = parseFloat(rows[i].getElementsByClassName("price")[0].innerText);
+        var qty = parseInt(rows[i].getElementsByClassName("qty-num")[0].innerText);
+
+        var itemTotal = price * qty;
+        rows[i].getElementsByClassName("item-total")[0].innerText = itemTotal;
+
+        total += itemTotal;
+    }
+        ocument.getElementById("total").innerText = total;
+}
+
+function updateQty(button, change) {
+    var qtyNum = button.parentElement.getElementsByClassName("qty-num")[0];
+    var currentQty = parseInt(qtyNum.innerText);
+    var newQty = currentQty + change;
+            
+    if (newQty < 1) newQty = 1;
+            
+    qtyNum.innerText = newQty;
+    calculatetotal();
+}
+
+function removeItem(button) {
+    var row = button.parentElement.parentElement;
+    row.remove();
+    calculatetotal();
+}
