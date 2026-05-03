@@ -78,3 +78,62 @@ function openFaq(button) {
         answer.style.display = "block"
     }
 }
+
+
+
+/*--------------------log in form --------------------------------------*/
+const container = document.querySelector('.container1');
+const signbtn = document.querySelector('.btn.sign');
+const loginbtn = document.querySelector('.btn.login');
+
+signbtn.addEventListener('click', () => {
+    container.classList.add('active');
+});
+
+loginbtn.addEventListener('click', () => {
+    container.classList.remove('active');
+});
+
+document.getElementById("signup").addEventListener
+("submit", function (event){
+        var Username = document.getElementById("Username").value;
+        var Email = document.getElementById("Email").value;
+        var password = document.getElementById("password").value;
+        var Confirmpassword = document.getElementById("Confirmpassword").value;
+if(password !== Confirmpassword){
+        alert("Passwords do not match");
+        return; }
+const user = {
+        Username : Username,
+        Email : Email,
+        password : password,};
+localStorage.setItem(Username, JSON.stringify(user));
+alert("Registration successful please login.");
+window.location.href = "login.html";
+});
+
+
+document.getElementById("loginForm").addEventListener("submit", function(event){
+event.preventDefault();
+let loginEmail = document.getElementById("lemail").value;
+let loginPassword = document.getElementById("lpassword").value;
+let foundUser = null;
+for(let i = 0; i < localStorage.length; i++){
+     let key = localStorage.key(i);
+     let user = JSON.parse(localStorage.getItem(key));
+          if(user.Email === loginEmail && user.password === loginPassword){
+            foundUser = user;
+            break;
+        }
+    }
+
+    if(foundUser){
+        localStorage.setItem("currentUser",JSON.stringify(foundUser));
+        alert("Login successful");
+        window.location.href = "home.html";
+
+    } else {
+        alert("Invalid email or password");
+    }
+
+});
