@@ -6,18 +6,100 @@
     <title>Xyra</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3e2a7b5865.js" crossorigin="anonymous"></script>
+
+    <script>
+    (function() {
+        function getCookie(name) {
+            const value = `; ${document.cookie}`
+            const parts = value.split(`; ${name}=`)
+
+            if(parts.length === 2) {
+                return parts.pop().split(';').shift()
+            }
+            return null
+        }
+
+        if(getCookie("theme") === "theme2") {
+            document.documentElement.setAttribute("page-theme", "theme2")
+        }
+    })()
+</script>
 </head>
 <body>
+ <main>
+        <div class="login1">
+        <div class="container1">
+            <div class="formBox1 Login">
+                <form id="loginForm">
+                    <h1>Login</h1>
+                    <div class="inputBox">
+                        <input type="email" placeholder="Email" required id="lemail">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" placeholder="password" required id="lpassword">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div class="forgot-link">
+                        <a href="#">Forgot pssword ?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <p>or login with social platform</p>
+                    <div class="social-icon">
+                        <a href="#" class="google-icon"><i class='fa-brands fa-google'></i></a>
+                        <a href="#" class="facebook-icon"><i class='fa-brands fa-facebook'></i></a>
+                    </div>
+                </form>
+             </div>
 
 
+             <div class="formBox1 Sign">
+                <form id="signup">
+                    <h1>Sign up</h1>
+                    <div class="inputBox">
+                        <input type="text" placeholder="Username" required id="Username">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" placeholder="Email" required id="Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" placeholder="password" required id="password">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" placeholder="Confirm password" required id="Confirmpassword">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <button type="submit" class="btn">Sign up</button>
+                    <p>or Sign up with social platform</p>
+                    <div class="social-icon">
+                        <a href="#" class="google-icon"><i class='fa-brands fa-google'></i></a>
+                        <a href="#" class="facebook-icon"><i class='fa-brands fa-facebook'></i></a>
+                    </div>
+                </form>
+             </div>
 
-    <main>
+             <div class="toggle-box">
+                <div class="toggle-panel toggle-left">
+                    <img src="images/black_logo.png" alt="" >
+                    <h1>welcome back!</h1>
+                    <p>Don`t have an account?</p>
+                    <button class="btn sign">Sign up</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <img src="images/black_logo.png" alt="" >
+                    <h1>Hello, welcome!</h1>
+                    <p>Already have an account?</p>
+                    <button class="btn login">login</button>
+                </div>
+             </div>
+        </div>
+    </div>
+ </main>
 
-
-    </main>
-
-
-    <footer>
+<footer>
         <!-- Top section -->
         <div class="footer-top">
 

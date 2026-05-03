@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xyra</title>
+    <title>Xyra - Cart</title>
+    
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3e2a7b5865.js" crossorigin="anonymous"></script>
 </head>
@@ -11,8 +12,6 @@
 
     <header>
         <nav class="navbar">
-            <!--Top navigation-->
-
             <div class="nav-top">
                 <a href="index.html" class="nav-logo">
                     <img src="images/white_logo.png" alt="Store Logo">
@@ -20,40 +19,84 @@
                 </a>
         
                 <div class="nav-actions">
+                    <button class="theme-toggle" onclick="switchTheme()" id="theme-btn">
+                        <i class="fa-solid fa-moon" id="theme-icon"></i>
+                    </button>
                     <a href="login.html" class="btn-outline">Login</a>
                     <a href="cart.html" class="btn-outline">
-                        <span id="cart-count"><i class="fa-solid fa-cart-shopping" id="cart-icon"></i>0</span>
+                        <span id="cart-count">
+                            <i class="fa-solid fa-cart-shopping" id="cart-icon"></i> 0
+                        </span>
                     </a>
                 </div>
             </div>
-            <!--Bottom navigation-->
-            
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="shop.html" class="nav-link">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="profile.html" class="nav-link">Profile</a>
-                    </li>
-                </ul>
-            
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+            </ul>
         </nav>
     </header>
 
+    <main class="cart-main">
+        <h1>Your Shopping Cart</h1>
 
-    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Items</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Item Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
 
+            <tbody id="cart-body">
+                <tr class="cart-row">
+                    <td>1</td>
+                    <td>Laptop</td>
+                    <td class="price">100</td>
+                    <td>
+                        <button class="qty-btn" onclick="updateQty(this,-1)">-</button>
+                        <span class="qty-num">1</span>
+                        <button class="qty-btn" onclick="updateQty(this,1)">+</button>
+                    </td>
+                    <td class="item-total">100</td>
+                    <td><button class="remove-btn" onclick="removeItem(this)">Remove</button></td>
+                </tr>
+                <tr class="cart-row">
+                    <td>2</td>
+                    <td>Phone</td>
+                    <td class="price">500</td>
+                    <td>
+                        <button class="qty-btn" onclick="updateQty(this,-1)">-</button>
+                        <span class="qty-num">1</span>
+                        <button class="qty-btn" onclick="updateQty(this,1)">+</button>
+                    </td>
+                    <td class="item-total">500</td>
+                    <td><button class="remove-btn" onclick="removeItem(this)">Remove</button></td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr class="grand-total-row">
+                    <td colspan="4" style="text-align: right;">Total Amount:</td>
+                    <td id="total">600</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="link-section">
+            <a href="checkout.html" class="btn-checkout">Go To Checkout</a>
+        </div>
     </main>
 
-
     <footer>
-        <!-- Top section -->
         <div class="footer-top">
-
-            <!-- First Column (Brand) -->
             <div class="footer-brand">
                 <a href="index.html" class="nav-logo">
                     <img src="images/white_logo.png" alt="Xyra Logo">
@@ -62,7 +105,6 @@
                 <p class="footer-tagline">Your one stop shop for everything.</p>
             </div>
 
-            <!-- Second Column (Quick Links) -->
             <div class="footer-col">
                 <h4 class="footer-heading">Quick Links</h4>
                 <ul class="footer-links">
@@ -73,7 +115,6 @@
                 </ul>
             </div>
 
-            <!-- Third Column (Contact Info) -->
             <div class="footer-col">
                 <h4 class="footer-heading">Contact</h4>
                 <ul class="footer-links">
@@ -83,7 +124,6 @@
                 </ul>
             </div>
 
-            <!-- Fourth Column (Social Media) -->
             <div class="footer-col">
                 <h4 class="footer-heading">Follow Us</h4>
                 <div class="footer-socials">
@@ -93,10 +133,8 @@
                     <a href="#"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
-
         </div>
 
-        <!-- Bottom section (copyright bar) -->
         <div class="footer-bottom">
             <p>© 2026 Xyra. All Rights Reserved.</p>
         </div>
