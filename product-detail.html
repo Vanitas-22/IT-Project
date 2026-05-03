@@ -46,6 +46,108 @@
 
     <main>
 
+        <!-- <a href="contact.html">
+
+            <div class="test_box">Contact Us</div>
+
+        </a> -->
+
+        <!-- Banner Section -->
+        <section class="banner-section">
+            <h1 class="banner-title">Product Details</h1>
+            <p class="banner-subtitle">Everything you need to know before you buy.</p>
+        </section>
+
+        <!-- Product Detail Section -->
+        <section class="product-detail-section">
+
+            <!-- Left Side (Image) -->
+            <div class="product-image-wrap">
+                <img id="pd-image" src="" alt="Product image">
+            </div>
+
+            <!-- Right Side (Info) -->
+            <div class="product-info">
+                <h2 id="pd-title" class="product-title">Product Name</h2>
+                <p class="product-price">$<span id="pd-price">0</span></p>
+
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <span class="rating-count">(128 reviews)</span>
+                </div>
+
+                <p id="pd-description" class="product-description">
+                    Quality product from Xyra.
+                </p>
+
+                <div class="product-options">
+                    <label class="qty-label">Quantity</label>
+                    <div class="qty-selector">
+                        <button class="qty-btn" onclick="changeQty(-1)" aria-label="Decrease quantity">-</button>
+                        <span class="qty-num" id="pd-qty">1</span>
+                        <button class="qty-btn" onclick="changeQty(1)" aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+
+                <p class="product-subtotal">Subtotal: <span class="subtotal-amount">$<span id="pd-subtotal">0</span></span></p>
+
+                <div class="product-actions">
+                    <button class="btn-add-cart" onclick="addToCartFromDetail()">
+                        <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                    </button>
+                    <a href="checkout.html" class="btn-buy-now">
+                        <i class="fa-solid fa-bolt"></i> Buy Now
+                    </a>
+                </div>
+
+                <div class="pd-feedback" id="pd-feedback">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Item added to cart.
+                </div>
+
+                <a href="shop.html" class="back-to-shop">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Shop
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Features Section -->
+        <section class="product-features">
+            <div class="feature-card">
+                <div class="info-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <div class="feature-text">
+                    <h4>Free Shipping</h4>
+                    <p>On all orders over $50</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="info-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                <div class="feature-text">
+                    <h4>30-Day Returns</h4>
+                    <p>Easy returns within 30 days</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="info-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="feature-text">
+                    <h4>Secure Payment</h4>
+                    <p>100% safe and encrypted</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="info-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="feature-text">
+                    <h4>24/7 Support</h4>
+                    <p>We're here whenever you need us</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
 
