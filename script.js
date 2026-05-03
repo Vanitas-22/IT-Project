@@ -2,37 +2,43 @@
 /*shop page js*/
 
 let cartCount = 0;
-
 let cartText = document.getElementById("cartCount");
 
-
-function setTheme(theme) {
-  if(theme === 'dark') {
-    document.body.classList.add('dark-mode');
-   } else {
-  document.body.classList.remove('dark-mode');
-   }
-    document.cookie = "userTheme=" + theme + ";max-age=" + (30*24*60*60) + ";path=/";
-    }
-window.onload = function() {
-    let savedTheme = "light";
-    let cookies = document.cookie.split(';');
-    for(let i = 0; i < cookies.length; i++) {
-        let c = cookies[i].trim();
-        if (c.indexOf("userTheme=") == 0) {
-            savedTheme = c.substring(10);
-       }
-    }
-     if(savedTheme === 'dark'){
-     document.body.className = savedTheme;
-}
-};
 function addToCart(name, price) {
-    cartCount++;
+    cartCount = cartCount + 1;
     cartText.innerHTML = cartCount;
-console.log(`Added: ${name} - $${price}`);
 }
 
+function filterSection(category) {
+    let electronics = document.getElementById('electronics-section');
+    let fashion = document.getElementById('fashion-section');
+    let accessories = document.getElementById('accessories-section');
+
+    let buttons = document.querySelectorAll('.filter-btn');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+
+    event.target.classList.add('active');
+
+    if (category == 'all') {
+        electronics.style.display = 'block';
+        fashion.style.display = 'block';
+        accessories.style.display = 'block';
+    } else if (category == 'electronics') {
+        electronics.style.display = 'block';
+        fashion.style.display = 'none';
+        accessories.style.display = 'none';
+    } else if (category == 'fashion') {
+        electronics.style.display = 'none';
+        fashion.style.display = 'block';
+        accessories.style.display = 'none';
+    } else if (category == 'accessories') {
+        electronics.style.display = 'none';
+        fashion.style.display = 'none';
+        accessories.style.display = 'block';
+    }
+}
 
 /* Contact Script */
 
