@@ -130,7 +130,7 @@ for(let i = 0; i < localStorage.length; i++){
     if(foundUser){
         localStorage.setItem("currentUser",JSON.stringify(foundUser));
         alert("Login successful");
-        window.location.href = "home.html";
+        window.location.href = "index.html";
 
     } else {
         alert("Invalid email or password");
