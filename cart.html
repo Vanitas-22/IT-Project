@@ -19,9 +19,14 @@
                 </a>
         
                 <div class="nav-actions">
+                    <button class="theme-toggle" onclick="switchTheme()" id="theme-btn">
+                        <i class="fa-solid fa-moon" id="theme-icon"></i>
+                    </button>
                     <a href="login.html" class="btn-outline">Login</a>
                     <a href="cart.html" class="btn-outline">
-                        <span id="cart-count"><i class="fa-solid fa-cart-shopping" id="cart-icon"></i> 0</span>
+                        <span id="cart-count">
+                            <i class="fa-solid fa-cart-shopping" id="cart-icon"></i> 0
+                        </span>
                     </a>
                 </div>
             </div>
@@ -135,40 +140,6 @@
         </div>
     </footer>
 
-    <script>
-        function calculatetotal() {
-            var rows = document.getElementsByClassName("cart-row");
-            var total = 0;
-
-            for (var i = 0; i < rows.length; i++) {
-                var price = parseFloat(rows[i].getElementsByClassName("price")[0].innerText);
-                var qty = parseInt(rows[i].getElementsByClassName("qty-num")[0].innerText);
-
-                var itemTotal = price * qty;
-                rows[i].getElementsByClassName("item-total")[0].innerText = itemTotal;
-
-                total += itemTotal;
-            }
-            document.getElementById("total").innerText = total;
-        }
-ة
-        function updateQty(button, change) {
-            var qtyNum = button.parentElement.getElementsByClassName("qty-num")[0];
-            var currentQty = parseInt(qtyNum.innerText);
-            var newQty = currentQty + change;
-            
-            if (newQty < 1) newQty = 1;
-            
-            qtyNum.innerText = newQty;
-            calculatetotal();
-        }
-
-        // دالة حذف منتج
-        function removeItem(button) {
-            var row = button.parentElement.parentElement;
-            row.remove();
-            calculatetotal();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
