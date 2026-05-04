@@ -639,9 +639,8 @@ footer {
     }
 }
 
-
-/*---------------------------------------log in form----------------------------------------*/
-.login1 {
+/*-------------------------------------------login & SIGNUP--------------------------------------------*/
+.logsin {
     display:flex;
     justify-content:center;
     align-items: center;
@@ -669,12 +668,46 @@ footer {
     color: var(--color-white);
     text-align: center;
     padding: 40px;
-    z-index: 1;
-    transition: 0.6s ease-in-out 1.2s, visibility 0s 1s ;
+    
 }
-.container1.active .formBox1{
-    right: 50%;  
+.lef2 {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--color-primary);
+    align-items: center;
+    color: var(--color-white);
+    text-align: center;
+    overflow: hidden;
+    background: #f5a623;
+    padding: 140px 0 0 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+
 }
+.lef2 img {
+    width: 200px;
+}
+.lef2 button{
+    width:150px ;
+    height: 48px;
+    border-radius:  8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,0.1);
+    border:2px solid #1a1a2e;
+    font-size: 16px;
+    color: var(--color-text);
+    font-weight: 600;
+    background-color: var(--color-secondary);
+
+}
+.formBox1 p{
+    color: #eee;
+}
+.lef2 h2,p {
+    font-size: 30px;
+    color: #1a1a2e;
+}
+
 form {
     width:100%;
 }
@@ -702,8 +735,8 @@ form {
     font-weight: 500;
 }
 .inputBox input::placeholder {
-    color: var(--color-text);
-    font: weight 400;
+    color: #1a1a2e;
+    font: weight 600;
 }
 .inputBox i {
     position: absolute;
@@ -722,6 +755,10 @@ form {
     text-decoration: none;
     
 }
+.btn2:hover{
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
 .btn {
     width:100% ;
     height: 48px;
@@ -735,13 +772,13 @@ form {
     transition: 0.3s ease;
 }
 .btn:hover{
-    opacity: 0.85;
-    transform: translateY(-3px);
+   color: #ffffff;
+   background-color: var(--color-primary);
+   border: 2px solid var(--color-secondary);
 }
 .container1 p{
     font-size: 14.5px;
     margin:15px 0;
-
 }
 
 .social-icon a {
@@ -758,87 +795,13 @@ form {
 }
 
 .google-icon:hover {
-    color: rgba(211, 1, 1, 0.597);
+    color: rgb(255, 237, 41);
     transform: translateY(-3px);
 }
 
 .facebook-icon:hover {
     color: rgb(67, 67, 234);
     transform: translateY(-3px);
-}
-
-.formBox1.Sign{
-    visibility: hidden;
-}
-.container1.active .formBox1.Sign{
-    visibility: visible;
-}
-
-.toggle-box {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.toggle-box::before{
-    content: '';
-    position: absolute;
-    left:-250%;
-    width: 300%;
-    height: 100%;
-    background: var(--color-secondary);
-    border-radius: 130px ;
-    z-index: 2;
-    transition: 1.8s ease-in-out ;
-}
-.container1.active .toggle-box::before {
-    left:50%;
-}
-.toggle-panel {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    color: var(--color-text);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    transition: 0.6s ease-in-out;
-} 
-
-.toggle-panel.toggle-left{
-    left:0;
-    transition-delay:1.2s ;
-}
-.container1.active .toggle-panel.toggle-left{
-    left: -50%;
-    transition-delay: 0.6s;
-}
-.toggle-panel.toggle-right{
-    right: -50%;
-    transition-delay: 0.6s ;
-}
-.container1.active .toggle-panel.toggle-right{
-    right: 0;
-    transition-delay: 1.2s;
-}
-.toggle-panel p {
-    margin-bottom: 20px;
-}
-.toggle-panel .btn{
-    width: 160px;
-    height: 46px;
-    background: transparent;
-    border: 2px solid var(--color-primary);
-    box-shadow: none;
-}
-.toggle-box img {
-    width: 250px;
-    height: 150;
-}
-.toggle-panel .btn:hover {
-    background: var(--color-primary);
-    color: #eee;
 }
 
 
