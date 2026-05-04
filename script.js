@@ -303,7 +303,7 @@ let loginForm = document.getElementById("loginForm");
             if(foundUser){
                 localStorage.setItem("currentUser", JSON.stringify(foundUser));
                 alert("Login successful");
-                window.location.href = "home.html";
+                window.location.href = "index.html";
             } else {
                 alert("Invalid email or password");
             }
