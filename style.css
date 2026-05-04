@@ -40,7 +40,7 @@
   --font-weight-bold: 700;
 
   /* site max width */
-  --site-max-width: 1300px;
+  --site-max-width: 100%;
 }
 
 [page-theme="theme2"] {
@@ -55,6 +55,11 @@
 }
 
 /* Whole page styling */
+
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -205,7 +210,6 @@ footer {
     margin-top: 12px;
     font-size: var(--font-size-n);
     color: rgba(255, 255, 255, 0.6);
-    max-width: 220px;
 }
 
 .footer-heading {
@@ -589,52 +593,6 @@ footer {
     padding: 2px 8px;
     border-radius: 10px;
     margin-left: 5px;
-}
-@media (max-width: 768px) {
-    .products-container {
-        gap: 6px;
-    }
-    .product-section {
-        padding: 0 6px;
-    }
-    .product-card h3 {
-        font-size: 10px;
-        margin: 6px 6px 2px;
-    }
-    .product-card .price {
-        font-size: 12px;
-        margin: 0 6px 6px;
-    }
-    .add-btn {
-        font-size: 10px;
-        padding: 8px;
-    }
-    .section-title {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    .cart {
-        bottom: 10px;
-        right: 10px;
-        padding: 10px 15px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .products-container {
-        gap: 4px;
-    }
-    .product-card h3 {
-        font-size: 9px;
-    }
-    .product-card .price {
-        font-size: 11px;
-    }
-    .add-btn {
-        font-size: 9px;
-        padding: 6px;
-    }
 }
 
 /*-------------------------------------------login & SIGNUP--------------------------------------------*/
