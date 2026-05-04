@@ -24,9 +24,8 @@
                     </button>
                     <a href="login.html" class="btn-outline">Login</a>
                     <a href="cart.html" class="btn-outline">
-                        <span id="cart-count">
-                            <i class="fa-solid fa-cart-shopping" id="cart-icon"></i> 0
-                        </span>
+                        <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+                        <span id="cart-count">0</span>
                     </a>
                 </div>
             </div>
@@ -40,9 +39,11 @@
     </header>
 
     <main class="cart-main">
-        <h1>Your Shopping Cart</h1>
-
-        <table>
+        <section class="banner-section">
+            <h1 class="banner-title">Your Shopping Cart</h1>
+        </section>
+        <section class="cart-contents-wrapper">
+            <table>
             <thead>
                 <tr>
                     <th>#</th>
@@ -55,44 +56,22 @@
             </thead>
 
             <tbody id="cart-body">
-                <tr class="cart-row">
-                    <td>1</td>
-                    <td>Laptop</td>
-                    <td class="price">100</td>
-                    <td>
-                        <button class="qty-btn" onclick="updateQty(this,-1)">-</button>
-                        <span class="qty-num">1</span>
-                        <button class="qty-btn" onclick="updateQty(this,1)">+</button>
-                    </td>
-                    <td class="item-total">100</td>
-                    <td><button class="remove-btn" onclick="removeItem(this)">Remove</button></td>
-                </tr>
-                <tr class="cart-row">
-                    <td>2</td>
-                    <td>Phone</td>
-                    <td class="price">500</td>
-                    <td>
-                        <button class="qty-btn" onclick="updateQty(this,-1)">-</button>
-                        <span class="qty-num">1</span>
-                        <button class="qty-btn" onclick="updateQty(this,1)">+</button>
-                    </td>
-                    <td class="item-total">500</td>
-                    <td><button class="remove-btn" onclick="removeItem(this)">Remove</button></td>
-                </tr>
+            
             </tbody>
 
             <tfoot>
                 <tr class="grand-total-row">
                     <td colspan="4" style="text-align: right;">Total Amount:</td>
-                    <td id="total">600</td>
+                    <td id="total">0</td>
                     <td></td>
                 </tr>
             </tfoot>
-        </table>
+            </table>
 
-        <div class="link-section">
-            <a href="checkout.html" class="btn-checkout">Go To Checkout</a>
-        </div>
+            <div class="link-section">
+                <a href="checkout.html" class="btn-checkout">Go To Checkout</a>
+            </div>
+        </section>
     </main>
 
     <footer>

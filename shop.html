@@ -25,9 +25,8 @@
                     </button>
                     <a href="login.html" class="btn-outline">Login</a>
                     <a href="cart.html" class="btn-outline">
-                        <span id="cart-count">
-                            <i class="fa-solid fa-cart-shopping" id="cart-icon"></i> 0
-                        </span>
+                        <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+                        <span id="cart-count">0</span>
                     </a>
                 </div>
             </div>
@@ -50,154 +49,184 @@
 
 
     <main>
-   <h1 class="shop-title">online shop</h1>
-    <!-- filter bar-->  
-      <div class="filter-bar">
-    <h2>shop by category</h2>
-        <div class="filter-buttons">
-          <button class="filter-btn active" onclick="filterSection('all')">All</button>
-          <button class="filter-btn" onclick="filterSection('electronics')">Electronics</button>
-          <button class="filter-btn" onclick="filterSection('fashion')">Clothes & Shoes</button>
-          <button class="filter-btn" onclick="filterSection('accessories')">Accessories</button>
-       </div>
-     </div>
+        <section class="banner-section">
+            <h1 class="banner-title">Get In Touch</h1>
+            <p class="banner-subtitle">Pick what your eyes desire.</p>
+        </section>
+            <!-- filter bar-->  
+        <div class="filter-bar">
+            <h2>shop by category</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterSection(event, 'all')">All</button>
+                <button class="filter-btn" onclick="filterSection(event, 'electronics')">Electronics</button>
+                <button class="filter-btn" onclick="filterSection(event, 'fashion')">Clothes & Shoes</button>
+                <button class="filter-btn" onclick="filterSection(event, 'accessories')">Accessories</button>
+            </div>
+        </div>
 
       <!-- clothes&shoes section -->
 
- <section class="product-section fashion" id="fashion-section">
-  <h3 class="section-title">Clothes & Shoes</h3>
- <div class="products-container"> 
-<div class="product-card">
- <a href="product-detail.html?name=T-shirt&price=50&img=T-shirt.jpg" class="product-link">
-  <img src="images/shop-images/T-shirt.jpg">
-  <h3>T-shirt</h3>
- </a>
- <p class="price">$50</p>
- <button class="add-btn" onclick="addToCart('T-shirt',50)">Add to cart</button>
-</div>
-<div class="product-card">
- <a href="product-detail.html?name=Hoodie&price=35&img=Hoodie.jpg" class="product-link">
-  <img src="images/shop-images/Hoodie.jpg">
-  <h3>Hoodie</h3>
- </a>
- <p class="price">$35</p>
- <button class="add-btn" onclick="addToCart('Hoodie',35)">Add to cart</button>
-</div>
-<div class="product-card">
-<a href="product-detail.html?name=Jacket&price=70&img=Jacket.jpg" class="product-link">
- <img src="images/shop-images/Jacket.jpg">
- <h3>Jacket</h3>
- <p class="price">$70</p>
- <button class="add-btn" onclick="addToCart('Jacket',70)">Add to cart</button>
-</div>
-<div class="product-card">
-<a href="product-detail.html?name=Jeans&price=50&img=Jeans.jpg" class="product-link">
- <img src="images/shop-images/Jeans.jpg">
- <h3>Jeans</h3>
- <p class="price">$50</p>
- <button class="add-btn" onclick="addToCart('Jeans',50)">Add to cart</button>
-</div>
-<div class="product-card">
- <a href="product-detail.html?name=Shoes&price=20&img=Shoes.jpg" class="product-link">
-  <img src="images/shop-images/Shoes.jpg">
-  <h3>Shoes</h3>
- </a>
+        <section class="product-section fashion" id="fashion-section">
+            <h3 class="section-title">Clothes & Shoes</h3>
 
- <p class="price">$20</p>
- <button class="add-btn" onclick="addToCart('Shoes',20)">Add to cart</button>
-</div>
- </div>
-</section>
+            <div class="products-container"> 
+                <div class="product-card">
+                    <a href="product-detail.html?name=T-shirt&price=50&img=T-shirt.jpg" class="product-link">
+                        <img src="images/shop-images/T-shirt.jpg">
+                        <h3>T-shirt</h3>
+                    </a>
+                    <p class="price">$50</p>
+                    <button class="add-btn" onclick="addToCart('T-shirt',50)">Add to cart</button>
+                </div>
 
-      <!-- electronics section-->
+                <div class="product-card">
+                    <a href="product-detail.html?name=Hoodie&price=35&img=Hoodie.jpg" class="product-link">
+                        <img src="images/shop-images/Hoodie.jpg">
+                        <h3>Hoodie</h3>
+                    </a>
+                    <p class="price">$35</p>
+                    <button class="add-btn" onclick="addToCart('Hoodie',35)">Add to cart</button>
+                </div>
 
-  <section class="product-section electronics" id="electronics-section">
-  <h3 class="section-title">Electronics</h3>
- <div class="products-container">
-<div class="product-card">
- <img src="images/shop-images/Iphone-12.jpg">
- <h3>Iphone-12</h3>
- <p class="price">$100</p>
- <button class="add-btn" onclick="addToCart('Iphone-12',100)">Add to cart</button>
-</div>
-  <div class="product-card">
- <img src="images/shop-images/Laptop-mac.jpg">
- <h3>Laptop-mac</h3>
- <p class="price">$150</p>
- <button class="add-btn" onclick="addToCart('Laptop-mac',150)">Add to cart</button>
-</div>
- <div class="product-card">
- <img src="images/shop-images/Headphones.jpg">
- <h3>Headphones</h3>
- <p class="price">$50</p>
- <button class="add-btn" onclick="addToCart('Headphones',50)">Add to cart</button>
-</div>
-<div class="product-card">
- <img src="images/shop-images/Soundcore.jpg">
- <h3>Soundcore</h3>
- <p class="price">$60</p>
- <button class="add-btn" onclick="addToCart('Soundcore',60)">Add to cart</button>
-   </div>
- </div>
- </section>
-        <!-- accesories section-->
- <section class="product-section accessories" id="accessories-section">
-  <h3 class="section-title">Accessories</h3>
- <div class="products-container">
-<div class="product-card">
- <a href="product-detail.html?name=Watch&price=20&img=Watch.jpg" class="product-link">
-  <img src="images/shop-images/Watch.jpg">
-  <h3>Watch</h3>
- </a>
- <p class="price">$20</p>
- <button class="add-btn" onclick="addToCart('Watch',20)">Add to cart</button>
-</div>
-<div class="product-card">
- <a href="product-detail.html?name=Cap&price=5&img=Cap.jpg" class="product-link">
-  <img src="images/shop-images/Cap.jpg">
-  <h3>Cap<h3>
-</a>
- <p class="price">$5</p>
- <button class="add-btn" onclick="addToCart('Cap',5)">Add to cart</button>
-</div>
+                <div class="product-card">
+                    <a href="product-detail.html?name=Jacket&price=70&img=Jacket.jpg" class="product-link">
+                        <img src="images/shop-images/Jacket.jpg">
+                        <h3>Jacket</h3>
+                    </a>
+                    <p class="price">$70</p>
+                    <button class="add-btn" onclick="addToCart('Jacket',70)">Add to cart</button>
+                </div>
 
-<div class="product-card">
- <a href="product-detail.html?name=Bag&price=10&img=Bag.jpg" class="product-link">
-  <img src="images/shop-images/Bag.jpg">
-  <h3>Bag</h3>
- </a>
- <p class="price">$10</p>
- <button class="add-btn" onclick="addToCart('Bag',10)">Add to cart</button>
-</div>
-<div class="product-card">
- <a href="product-detail.html?name=Sunglasses&price=15&img=Sunglasses.jpg" class="product-link">
-  <img src="images/shop-images/Sunglasses.jpg">
-  <h3>Sunglasses</h3>
- </a>
- <p class="price">$15</p>
- <button class="add-btn" onclick="addToCart('Sunglasses',15)">Add to cart</button>
-</div>
-<div class="product-card">
- <a href="product-detail.html?name=Laptopstand&price=25&img=Laptopstand.jpg" class="product-link">
-  <img src="images/shop-images/Laptopstand.jpg">
-  <h3>Laptopstand</h3>
- </a>
- <p class="price">$25</p>
- <button class="add-btn" onclick="addToCart('Laptopstand',25)">Add to cart</button>
-</div>
-<div class="product-card">
- <a href="product-detail.html?name=Cases&price=5&img=cases.jpg" class="product-link">
-  <img src="images/shop-images/Cases.jpg">
-  <h3>Cases</h3>
- </a>
- <p class="price">$5</p>
- <button class="add-btn" onclick="addToCart('Cases',5)">Add to cart</button>
-</div>
-  </div>
-</section>
-<div class="cart">
-     Cart Items: <span id="cartCount">0</span>
-</div>
+                <div class="product-card">
+                    <a href="product-detail.html?name=Jeans&price=50&img=Jeans.jpg" class="product-link">
+                        <img src="images/shop-images/Jeans.jpg">
+                        <h3>Jeans</h3>
+                    </a>
+                    <p class="price">$50</p>
+                    <button class="add-btn" onclick="addToCart('Jeans',50)">Add to cart</button>
+                </div>
+
+                <div class="product-card">
+                    <a href="product-detail.html?name=Shoes&price=20&img=Shoes.jpg" class="product-link">
+                        <img src="images/shop-images/Shoes.jpg">
+                        <h3>Shoes</h3>
+                    </a>
+
+                    <p class="price">$20</p>
+                    <button class="add-btn" onclick="addToCart('Shoes',20)">Add to cart</button>
+                </div>
+            </div>
+        </section>
+
+            <!-- electronics section-->
+
+        <section class="product-section electronics" id="electronics-section">
+            <h3 class="section-title">Electronics</h3>
+
+            <div class="products-container">
+                <div class="product-card">
+                    <a href="product-detail.html?name=Iphone-12&price=100&img=Iphone-12.jpg" class="product-link">
+                        <img src="images/shop-images/Iphone-12.jpg">
+                        <h3>Iphone-12</h3>
+                    </a>
+                    <p class="price">$100</p>
+                    <button class="add-btn" onclick="addToCart('Iphone-12',100)">Add to cart</button>
+                </div>
+
+                <div class="product-card">
+                    <a href="product-detail.html?name=Laptop-mac&price=150&img=Laptop-mac.jpg" class="product-link">
+                        <img src="images/shop-images/Laptop-mac.jpg">
+                        <h3>Laptop-mac</h3>
+                    </a>
+                    <p class="price">$150</p>
+                    <button class="add-btn" onclick="addToCart('Laptop-mac',150)">Add to cart</button>
+                </div>
+
+                <div class="product-card">
+                    <a href="product-detail.html?name=Headphones&price=50&img=Headphones.jpg" class="product-link">
+                        <img src="images/shop-images/Headphones.jpg">
+                        <h3>Headphones</h3>
+                    </a>
+                    <p class="price">$50</p>
+                    <button class="add-btn" onclick="addToCart('Headphones',50)">Add to cart</button>
+                </div>
+
+                <div class="product-card">
+                    <a href="product-detail.html?name=Soundcore&price=60&img=Soundcore.jpg" class="product-link">
+                        <img src="images/shop-images/Soundcore.jpg">
+                        <h3>Soundcore</h3>
+                    </a>
+                    <p class="price">$60</p>
+                    <button class="add-btn" onclick="addToCart('Soundcore',60)">Add to cart</button>
+                </div>
+            </div>
+        </section>
+
+            <!-- accesories section-->
+
+        <section class="product-section accessories" id="accessories-section">
+            <h3 class="section-title">Accessories</h3>
+
+            <div class="products-container">
+                <div class="product-card">
+                <a href="product-detail.html?name=Watch&price=20&img=Watch.jpg" class="product-link">
+                    <img src="images/shop-images/Watch.jpg">
+                    <h3>Watch</h3>
+                </a>
+                <p class="price">$20</p>
+                <button class="add-btn" onclick="addToCart('Watch',20)">Add to cart</button>
+            </div>
+
+            <div class="product-card">
+                <a href="product-detail.html?name=Cap&price=5&img=Cap.jpg" class="product-link">
+                    <img src="images/shop-images/Cap.jpg">
+                    <h3>Cap<h3>
+                </a>
+                <p class="price">$5</p>
+                <button class="add-btn" onclick="addToCart('Cap',5)">Add to cart</button>
+            </div>
+
+            <div class="product-card">
+                <a href="product-detail.html?name=Bag&price=10&img=Bag.jpg" class="product-link">
+                    <img src="images/shop-images/Bag.jpg">
+                    <h3>Bag</h3>
+                </a>
+                <p class="price">$10</p>
+                <button class="add-btn" onclick="addToCart('Bag',10)">Add to cart</button>
+            </div>
+
+            <div class="product-card">
+                <a href="product-detail.html?name=Sunglasses&price=15&img=Sunglasses.jpg" class="product-link">
+                    <img src="images/shop-images/Sunglasses.jpg">
+                    <h3>Sunglasses</h3>
+                </a>
+                <p class="price">$15</p>
+                <button class="add-btn" onclick="addToCart('Sunglasses',15)">Add to cart</button>
+            </div>
+
+            <div class="product-card">
+                <a href="product-detail.html?name=Laptopstand&price=25&img=Laptopstand.jpg" class="product-link">
+                    <img src="images/shop-images/Laptopstand.jpg">
+                    <h3>Laptopstand</h3>
+                </a>
+                <p class="price">$25</p>
+                <button class="add-btn" onclick="addToCart('Laptopstand',25)">Add to cart</button>
+            </div>
+
+            <div class="product-card">
+                <a href="product-detail.html?name=Cases&price=5&img=cases.jpg" class="product-link">
+                    <img src="images/shop-images/Cases.jpg">
+                        <h3>Cases</h3>
+                </a>
+                <p class="price">$5</p>
+                <button class="add-btn" onclick="addToCart('Cases',5)">Add to cart</button>
+            </div>
+        </div>
+
+        </section>
+            <div class="cart">
+                Cart Items: <span id="cart-count2">0</span>
+            </div>
  
     </main>
 

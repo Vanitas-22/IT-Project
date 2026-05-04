@@ -1,44 +1,3 @@
-/*shop page js*/
-
-let cartCount = 0;
-let cartText = document.getElementById("cartCount");
-
-function addToCart(name, price) {
-    cartCount = cartCount + 1;
-    cartText.innerHTML = cartCount;
-}
-
-function filterSection(category) {
-    let electronics = document.getElementById('electronics-section');
-    let fashion = document.getElementById('fashion-section');
-    let accessories = document.getElementById('accessories-section');
-
-    let buttons = document.querySelectorAll('.filter-btn');
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('active');
-    }
-
-    event.target.classList.add('active');
-
-    if (category == 'all') {
-        electronics.style.display = 'block';
-        fashion.style.display = 'block';
-        accessories.style.display = 'block';
-    } else if (category == 'electronics') {
-        electronics.style.display = 'block';
-        fashion.style.display = 'none';
-        accessories.style.display = 'none';
-    } else if (category == 'fashion') {
-        electronics.style.display = 'none';
-        fashion.style.display = 'block';
-        accessories.style.display = 'none';
-    } else if (category == 'accessories') {
-        electronics.style.display = 'none';
-        fashion.style.display = 'none';
-        accessories.style.display = 'block';
-    }
-}
-
 /* Theme Script */ 
 
 function setCookie(name, value, days) {
@@ -107,52 +66,129 @@ window.addEventListener("scroll", () => {
     lastScroll = currentScroll
 })
 
+/*---------------------------login&sign up-----------------------*/
+     /*--------------signup----------*/
+document.addEventListener("DOMContentLoaded", function(){
+    let signupForm = document.getElementById("signup");
+    if(signupForm){
+    signupForm.addEventListener("submit", function (event){
+    event.preventDefault();
+    var Username = document.getElementById("Username").value;
+    var Email = document.getElementById("Email").value;
+    var password = document.getElementById("password").value;
+    var Confirmpassword = document.getElementById("Confirmpassword").value;
+if(password !== Confirmpassword){
+    alert("Passwords do not match");
+ return;}
+const user = {
+Username: Username,
+Email: Email,
+password: password };
+ localStorage.setItem(Username, JSON.stringify(user));
+alert("Registration successful please login.");
+window.location.href = "login.html";}); }
+    /*--------------login---------------*/
 
-/* Contact Script */
-
-/* Submit Button */
-function formSubmit() {
-    const name = document.getElementById("name").value
-    const email = document.getElementById("email").value
-    const message = document.getElementById("message").value
-    const subject = document.getElementById("subject").value
-
-    if (name === "" || email === "" || message === "" || subject === "") {
-        alert("Please fill in all required fields")
-        return;
+let loginForm = document.getElementById("loginForm");
+    if(loginForm){
+        loginForm.addEventListener("submit", function(event){
+            event.preventDefault();
+            let loginEmail = document.getElementById("lemail").value;
+            let loginPassword = document.getElementById("lpassword").value;
+            let foundUser = null;
+            for(let i = 0; i < localStorage.length; i++){
+                let key = localStorage.key(i);
+                if(key === "currentUser") continue;
+                let user;
+                try {
+                    user = JSON.parse(localStorage.getItem(key));
+                } catch {
+                    continue; }
+                if(user && user.Email === loginEmail && user.password === loginPassword){
+                    foundUser = user;
+                    break;
+                }
+            }
+            if(foundUser){
+                localStorage.setItem("currentUser", JSON.stringify(foundUser));
+                alert("Login successful");
+                window.location.href = "index.html";
+            } else {
+                alert("Invalid email or password");
+            }
+        });
     }
 
-    const success = document.getElementById("submit-success")
-    success.style.display = "flex"
+});
 
-    document.getElementById("name").value = ""
-    document.getElementById("email").value = ""
-    document.getElementById("message").value = ""
-    document.getElementById("subject").selectedIndex = 0
+/*shop page js*/
 
-    document.querySelectorAll("#name, #email, #message, #subject").forEach(input => {
-    input.addEventListener("input", () => {
-        success.style.display = "none"
-    })
-})
+let cartCount = parseInt(localStorage.getItem("cartCount")) || 0
+let cartText = document.getElementById("cart-count")
+let cartText2 = document.getElementById("cart-count2")
+
+function updateCartDisplay() {
+    if(cartText) cartText.textContent = cartCount
+    if(cartText2) cartText2.textContent = cartCount
 }
 
-/* FAQ buttons */
-function openFaq(button) {
-    const answer = button.nextElementSibling
-    const isOpen = button.classList.contains("active")
+function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+    
+    const existing = cart.find(item => item.name === name)
+    
+    if(existing) {
+        existing.qty += 1
+    } else {
+        cart.push({ name: name, price: price, qty: 1 })
+    }
+    
+    localStorage.setItem("cart", JSON.stringify(cart))
+    updateCartDisplay()
+}
 
-    document.querySelectorAll(".faq-question").forEach(q => {
-        q.classList.remove("active")
-        q.nextElementSibling.style.display = "none"
-    })
+function getCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+    return cart.reduce((total, item) => total + item.qty, 0)
+}
 
-    if (!isOpen) {
-        button.classList.add("active")
-        answer.style.display = "block"
+function updateCartDisplay() {
+    cartCount = getCartCount()
+    if(cartText) cartText.textContent = cartCount
+    if(cartText2) cartText2.textContent = cartCount
+}
+
+updateCartDisplay()
+
+function filterSection(event, category) {
+    let electronics = document.getElementById('electronics-section');
+    let fashion = document.getElementById('fashion-section');
+    let accessories = document.getElementById('accessories-section');
+
+    let buttons = document.querySelectorAll('.filter-btn');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+    event.target.classList.add('active');
+
+    if (category == 'all') {
+        electronics.style.display = 'block';
+        fashion.style.display = 'block';
+        accessories.style.display = 'block';
+    } else if (category == 'electronics') {
+        electronics.style.display = 'block';
+        fashion.style.display = 'none';
+        accessories.style.display = 'none';
+    } else if (category == 'fashion') {
+        electronics.style.display = 'none';
+        fashion.style.display = 'block';
+        accessories.style.display = 'none';
+    } else if (category == 'accessories') {
+        electronics.style.display = 'none';
+        fashion.style.display = 'none';
+        accessories.style.display = 'block';
     }
 }
-
 
 /* Product Detail Script */
 
@@ -257,92 +293,119 @@ function addToCartFromDetail() {
 }
 
 window.addEventListener("load", loadProductDetail)
-/*---------------------------login&sign up-----------------------*/
-     /*--------------signup----------*/
-document.addEventListener("DOMContentLoaded", function(){
-    let signupForm = document.getElementById("signup");
-    if(signupForm){
-    signupForm.addEventListener("submit", function (event){
-    event.preventDefault();
-    var Username = document.getElementById("Username").value;
-    var Email = document.getElementById("Email").value;
-    var password = document.getElementById("password").value;
-    var Confirmpassword = document.getElementById("Confirmpassword").value;
-if(password !== Confirmpassword){
-    alert("Passwords do not match");
- return;}
-const user = {
-Username: Username,
-Email: Email,
-password: password };
- localStorage.setItem(Username, JSON.stringify(user));
-alert("Registration successful please login.");
-window.location.href = "login.html";}); }
-    /*--------------login---------------*/
-
-let loginForm = document.getElementById("loginForm");
-    if(loginForm){
-        loginForm.addEventListener("submit", function(event){
-            event.preventDefault();
-            let loginEmail = document.getElementById("lemail").value;
-            let loginPassword = document.getElementById("lpassword").value;
-            let foundUser = null;
-            for(let i = 0; i < localStorage.length; i++){
-                let key = localStorage.key(i);
-                if(key === "currentUser") continue;
-                let user;
-                try {
-                    user = JSON.parse(localStorage.getItem(key));
-                } catch {
-                    continue; }
-                if(user && user.Email === loginEmail && user.password === loginPassword){
-                    foundUser = user;
-                    break;
-                }
-            }
-            if(foundUser){
-                localStorage.setItem("currentUser", JSON.stringify(foundUser));
-                alert("Login successful");
-                window.location.href = "index.html";
-            } else {
-                alert("Invalid email or password");
-            }
-        });
-    }
-
-});
-
 
 /* Cart script */
-function calculatetotal() {
-    var rows = document.getElementsByClassName("cart-row");
-    var total = 0;
+function loadCart() {
+    const cartBody = document.getElementById("cart-body")
+    if(!cartBody) return
 
-    for (var i = 0; i < rows.length; i++) {
-        var price = parseFloat(rows[i].getElementsByClassName("price")[0].innerText);
-        var qty = parseInt(rows[i].getElementsByClassName("qty-num")[0].innerText);
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+    cartBody.innerHTML = ""
 
-        var itemTotal = price * qty;
-        rows[i].getElementsByClassName("item-total")[0].innerText = itemTotal;
-
-        total += itemTotal;
+    if(cart.length === 0) {
+        cartBody.innerHTML = `
+            <tr>
+                <td colspan="6" style="text-align:center; padding:40px;">
+                    Your cart is empty. 
+                    <a href="shop.html">Continue Shopping</a>
+                </td>
+            </tr>`
+        document.getElementById("total").textContent = "0"
+        return
     }
-        ocument.getElementById("total").innerText = total;
+
+    cart.forEach((item, index) => {
+        const row = document.createElement("tr")
+        row.className = "cart-row"
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${item.name}</td>
+            <td class="price">${item.price}</td>
+            <td>
+                <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+                <span class="qty-num">${item.qty}</span>
+                <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+            </td>
+            <td class="item-total">${(item.price * item.qty).toFixed(2)}</td>
+            <td><button class="remove-btn" onclick="removeItem(${index})">Remove</button></td>
+        `
+        cartBody.appendChild(row)
+    })
+
+    updateTotal()
 }
 
-function updateQty(button, change) {
-    var qtyNum = button.parentElement.getElementsByClassName("qty-num")[0];
-    var currentQty = parseInt(qtyNum.innerText);
-    var newQty = currentQty + change;
-            
-    if (newQty < 1) newQty = 1;
-            
-    qtyNum.innerText = newQty;
-    calculatetotal();
+function changeQty(index, change) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+    cart[index].qty += change
+
+    if(cart[index].qty < 1) {
+        cart.splice(index, 1)
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart))
+    loadCart()
+    updateCartDisplay()
 }
 
-function removeItem(button) {
-    var row = button.parentElement.parentElement;
-    row.remove();
-    calculatetotal();
+function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+    cart.splice(index, 1)
+    localStorage.setItem("cart", JSON.stringify(cart))
+    loadCart()
+    updateCartDisplay()
+}
+
+function updateTotal() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+    const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0)
+    const totalEl = document.getElementById("total")
+    if(totalEl) totalEl.textContent = total.toFixed(2)
+}
+
+loadCart()
+
+/* Contact Script */
+
+/* Submit Button */
+function formSubmit() {
+    const name = document.getElementById("name").value
+    const email = document.getElementById("email").value
+    const message = document.getElementById("message").value
+    const subject = document.getElementById("subject").value
+
+    if (name === "" || email === "" || message === "" || subject === "") {
+        alert("Please fill in all required fields")
+        return;
+    }
+
+    const success = document.getElementById("submit-success")
+    success.style.display = "flex"
+
+    document.getElementById("name").value = ""
+    document.getElementById("email").value = ""
+    document.getElementById("message").value = ""
+    document.getElementById("subject").selectedIndex = 0
+
+    document.querySelectorAll("#name, #email, #message, #subject").forEach(input => {
+    input.addEventListener("input", () => {
+        success.style.display = "none"
+    })
+})
+}
+
+/* FAQ buttons */
+function openFaq(button) {
+    const answer = button.nextElementSibling
+    const isOpen = button.classList.contains("active")
+
+    document.querySelectorAll(".faq-question").forEach(q => {
+        q.classList.remove("active")
+        q.nextElementSibling.style.display = "none"
+    })
+
+    if (!isOpen) {
+        button.classList.add("active")
+        answer.style.display = "block"
+    }
 }
