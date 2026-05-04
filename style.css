@@ -680,7 +680,7 @@ footer {
     color: var(--color-white);
     text-align: center;
     overflow: hidden;
-    background: #f5a623;
+    background: var(--color-secondary);
     padding: 140px 0 0 0;
     box-shadow: 0 0 30px rgba(0, 0, 0, .2);
 
