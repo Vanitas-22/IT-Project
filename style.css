@@ -167,6 +167,10 @@ header .nav-top{
     letter-spacing: 0.5px;
 }
 
+#login-icon {
+    margin-right: 7px;
+}
+
 .btn-outline {
     border: 2px solid var(--color-secondary);
     border-radius: var(--border-radius-m);
@@ -1322,10 +1326,20 @@ th {
     border-radius: 5px;
 }
 
+.item0 h4{
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
 .item0 img {
     width: 100%;
     height: 80px;
     object-fit: cover;
+}
+
+.item0:hover {
+    box-shadow: 0 8px 20px rgba(26, 26, 46, 0.15);
+    transform: translateY(-3px);
 }
 
 .promo-side0 {
@@ -1335,10 +1349,14 @@ th {
 
 .discount-card0 {
     background: #fff;
-    border: 3px dashed crimson;
+    border: 4px dashed var(--color-primary);
     padding: 40px 20px;
     text-align: center;
     border-radius: 15px;
+}
+
+.discount-card0 h2 {
+    color: var(--color-secondary);
 }
 
 .shop-btn0 {
@@ -1350,6 +1368,11 @@ th {
     cursor: pointer;
     margin-top: 20px;
     border-radius: 5px;
+}
+
+.shop-btn0:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .clear0 {

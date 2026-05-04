@@ -6,6 +6,23 @@
     <title>Xyra</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3e2a7b5865.js" crossorigin="anonymous"></script>
+    <script>
+    (function() {
+        function getCookie(name) {
+            const value = `; ${document.cookie}`
+            const parts = value.split(`; ${name}=`)
+
+            if(parts.length === 2) {
+                return parts.pop().split(';').shift()
+            }
+            return null
+        }
+
+            if(getCookie("theme") === "theme2") {
+                document.documentElement.setAttribute("page-theme", "theme2")
+            }
+        })()
+    </script>
 </head>
 <body>
 
@@ -23,7 +40,7 @@
                     <button class="theme-toggle" onclick="switchTheme()" id="theme-btn">
                         <i class="fa-solid fa-moon" id="theme-icon"></i>
                     </button>
-                    <a href="login.html" class="btn-outline">Login</a>
+                    <a id="login-btn" href="login.html" class="btn-outline"><i id="login-icon" class=""></i> Login</a>
                     <a href="cart.html" class="btn-outline">
                         <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
                         <span id="cart-count">0</span>
@@ -67,27 +84,35 @@
                 <h2 class="title-bar0">BEST SELLERS </h2>
                 <div class="items-grid0">
                     <div class="item0">
+                        <a href="product-detail.html?name=Watch&price=20&img=Watch.jpg">
                         <img src="images/shop-images/Watch.jpg" alt="watch">
                         <h4>watch</h4>
+                        </a>
                     </div>
                     <div class="item0">
+                        <a href="product-detail.html?name=Jacket&price=70&img=Jacket.jpg">
                         <img src="images/shop-images/Jacket.jpg" alt="suit">
                         <h4>Jacket</h4>
+                        </a>
                     </div>
                     <div class="item0">
+                        <a href="product-detail.html?name=T-shirt&price=50&img=T-shirt.jpg">
                         <img src="images/shop-images/T-shirt.jpg" alt="shirt">
                         <h4>shirt</h4>
+                        </a>
                     </div>
                     <div class="item0">
+                        <a href="product-detail.html?name=Jeans&price=50&img=Jeans.jpg">
                         <img src="images/shop-images/Jeans.jpg" alt="jaens">
                         <h4>Jeans</h4>
+                        </a>
                     </div>
                 </div>
             </div>
 
             <div class="promo-side0">
                 <div class="discount-card0">
-                    <h2 style="color: crimson;">BIG SALES</h2>
+                    <h2>BIG SALES</h2>
                     <h3>discount up to 60%</h3>
                     <a href="shop.html">
                         <button class="shop-btn0">SHOP NOW</button>

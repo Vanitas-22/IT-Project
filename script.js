@@ -121,6 +121,49 @@ let loginForm = document.getElementById("loginForm");
 
 });
 
+/*--------------profile---------------*/
+
+function loadProfile() {
+    const profileUsername = document.getElementById("profile-username")
+    if(!profileUsername) return
+
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"))
+
+    if(!currentUser) {
+        alert("You are not logged in")
+        window.location.href = "login.html"
+        return
+    }
+    document.getElementById("profile-username").value = currentUser.Username
+    document.getElementById("profile-email").value = currentUser.Email
+}
+
+function logout() {
+    localStorage.removeItem("currentUser")
+    window.location.href = "login.html"
+}
+
+loadProfile()
+
+function updateLoginButton() {
+    const loginBtn = document.getElementById("login-btn")
+    const loginIcon = document.getElementById("login-icon")
+    if (!loginBtn) return
+
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"))
+
+    if (currentUser) {
+        loginBtn.lastChild.textContent = currentUser.Username
+        loginBtn.href = "profile.html";
+        loginIcon.className = "fa-solid fa-user"
+
+    } else {
+        loginBtn.textContent = "Login"
+        loginBtn.href = "login.html"
+    }
+}
+updateLoginButton();
+
 /*shop page js*/
 
 let cartCount = parseInt(localStorage.getItem("cartCount")) || 0
@@ -282,7 +325,7 @@ function addToCartFromDetail() {
 
     const navCart = document.getElementById("cart-count")
     if (navCart) {
-        navCart.innerHTML = `<i class="fa-solid fa-cart-shopping" id="cart-icon"></i>${cartCount}`
+        navCart.innerHTML = `${cartCount}`
     }
 
     const feedback = document.getElementById("pd-feedback")

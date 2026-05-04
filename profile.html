@@ -6,6 +6,23 @@
     <title>Xyra</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3e2a7b5865.js" crossorigin="anonymous"></script>
+    <script>
+    (function() {
+        function getCookie(name) {
+            const value = `; ${document.cookie}`
+            const parts = value.split(`; ${name}=`)
+
+            if(parts.length === 2) {
+                return parts.pop().split(';').shift()
+            }
+            return null
+        }
+
+            if(getCookie("theme") === "theme2") {
+                document.documentElement.setAttribute("page-theme", "theme2")
+            }
+        })()
+    </script>
 </head>
 <body>
 
@@ -23,7 +40,7 @@
                     <button class="theme-toggle" onclick="switchTheme()" id="theme-btn">
                         <i class="fa-solid fa-moon" id="theme-icon"></i>
                     </button>
-                    <a href="login.html" class="btn-outline">Login</a>
+                    <a id="login-btn" href="login.html" class="btn-outline"><i id="login-icon" class=""></i> Login</a>
                     <a href="cart.html" class="btn-outline">
                         <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
                         <span id="cart-count">0</span>
@@ -49,8 +66,31 @@
 
 
     <main>
+        <div class="logsin">
+            <div class="container1" style="height: auto; padding: 40px;">
+            
+                <div class="formBox1 Login" style="position: relative; width: 100%; height: auto; padding: 40px;">
+                    <div style="width: 100%;">
+                        <h1>My Profile</h1>
 
+                        <div class="inputBox">
+                            <input type="text" id="profile-username" placeholder="Username" readonly>
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="email" id="profile-email" placeholder="Email" readonly>
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+
+                        <button class="btn" onclick="logout()">Logout</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
+
 
 
     <footer>
