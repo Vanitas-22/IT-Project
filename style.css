@@ -1368,14 +1368,46 @@ th {
         padding: 30px 20px;
     }
 
+    .logsin {
+        padding: 20px;
+        min-height: 100vh;
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+
     .container1 {
-        width: 95%;
+        width: 100%;
         height: auto;
+        display: flex;
         flex-direction: column;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .lef2 {
+        position: relative;
+        width: 100%;
+        padding: 30px 20px;
+        text-align: center;
+        order: -1;
+        border-radius: 0;
+    }
+
+    .lef2 img {
+        width: 80px;
+        margin-bottom: 10px;
     }
 
     .formBox1 {
         position: relative;
+        width: 100%;
+        height: auto;
+        right: auto;
+        padding: 30px 20px;
+        border-radius: 0;
+    }
+
+    .formBox1 form {
         width: 100%;
     }
 
@@ -1391,5 +1423,14 @@ th {
     .qty-btn {
         width: 22px;
         height: 22px;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    .faq-section {
+        padding: 30px 20px;
     }
 }
