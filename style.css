@@ -1332,3 +1332,64 @@ th {
 .clear0 {
     clear: both;
 }
+
+
+@media (max-width: 780px) {
+    .nav-top {
+        padding: 12px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .btn-outline {
+        padding: 4px 10px;
+        font-size: 0.85rem;
+    }
+
+    .nav-menu {
+        justify-content: flex-start;
+        gap: 5px;
+        padding: 8px 12px;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+}
+
+    @media (max-width: 780px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 30px 20px;
+    }
+
+    .container1 {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .formBox1 {
+        position: relative;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .qty-btn {
+        width: 22px;
+        height: 22px;
+    }
+}
