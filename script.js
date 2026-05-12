@@ -100,14 +100,7 @@ let loginForm = document.getElementById("loginForm");
                 let key = localStorage.key(i);
                 if(key === "currentUser") continue;
                 let user;
-                try {
-                    user = JSON.parse(localStorage.getItem(key));
-                } catch {
-                    continue; }
-                if(user && user.Email === loginEmail && user.password === loginPassword){
-                    foundUser = user;
-                    break;
-                }
+                
             }
             if(foundUser){
                 localStorage.setItem("currentUser", JSON.stringify(foundUser));
