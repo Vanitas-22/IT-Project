@@ -101,6 +101,10 @@ let loginForm = document.getElementById("loginForm");
                 if(key === "currentUser") continue;
                 let user;
                 
+                if(user && user.Email === loginEmail && user.password === loginPassword){
+                    foundUser = user;
+                    break;
+                }
             }
             if(foundUser){
                 localStorage.setItem("currentUser", JSON.stringify(foundUser));
