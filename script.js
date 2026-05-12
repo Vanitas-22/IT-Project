@@ -73,10 +73,10 @@ document.addEventListener("DOMContentLoaded", function(){
     if(signupForm){
     signupForm.addEventListener("submit", function (event){
     event.preventDefault();
-    var Username = document.getElementById("Username").value;
-    var Email = document.getElementById("Email").value;
-    var password = document.getElementById("password").value;
-    var Confirmpassword = document.getElementById("Confirmpassword").value;
+    let Username = document.getElementById("Username").value;
+    let Email = document.getElementById("Email").value;
+    let password = document.getElementById("password").value;
+    let Confirmpassword = document.getElementById("Confirmpassword").value;
 if(password !== Confirmpassword){
     alert("Passwords do not match");
  return;}
